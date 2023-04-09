@@ -10,6 +10,60 @@ body {
     background-color: #292929;
 }
 
+#title > p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4vw;
+    text-align: center;
+    margin: 50px 20px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 50px;
+    border: .2vw solid transparent;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-shadow: 1px 1px 0px black;
+    
+}
+
+/* 
+------------------------------------------------------
+CONFIGURAÇÕES ABAIXO FEITAS POR JAVASCRIPT 
+
+ #title > #pTitle:hover {
+    color: #63CDFF;
+    
+    border: .2vw solid #63CDFF;
+    box-shadow: 0 0 20px #13B3FF, 0 0 60px #13B3FF, inset 0 0 1vw rgba(0,0,0,1), inset 0 0 3vw rgba(0,0,0,.2);
+    background: linear-gradient(0deg, #333, #000);
+
+} 
+-------------------------------------------------------
+*/
+strong{
+    color: #63CDFF;
+}
+
+div#divLabel{
+    
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%)
+    
+}
+
+#labelCheck{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 1.2vw;
+    text-align: center;
+    text-shadow: 1px 1px 0px rgb(0, 0, 0);
+    
+}
+/* Botão configurado abaixo */
+
 .center { /* div que contém o Checkbox */
     position: absolute;
     top: 50%;
@@ -74,4 +128,11 @@ input:checked[type="checkbox"]:after{ /* o que a Bolinha faz ao ser clicada (des
     /* background: #63CDFF;
     box-shadow: 0 0 5px #13B3FF, 0 0 15px #13B3FF */
 
+}
+
+@media screen and (max-width: 1362px) {
+    #labelCheck{
+    
+        font-size: 1em;
+    }
 }

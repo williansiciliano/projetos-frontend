@@ -9,8 +9,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="center">
-        <input type="checkbox" name="checkInput" id="icheckInput">
+    <div id="title">
+        <p id="pTitle" onmouseenter="neonOn()" onmouseout="neonOff()">CSS Glowing Checkbox Button Effects</p>
     </div>
+    <div id="divLabel">
+        <label id="labelCheck">Clique no botão abaixo para <strong>ativar/desativar</strong> o efeito <strong>'Neon'</strong> do título da página:</label>
+    </div>
+    <div class="center">
+        <input type="checkbox" name="checkInput" id="icheckInput" onchange="handleCheckboxChange()" >
+    </div>
+
+    <script>
+        var parTitle = window.document.getElementById("pTitle");
+        var inputCheckbox = window.document.getElementById("icheckInput");
+
+        function handleCheckboxChange() {
+            if (inputCheckbox.checked) {
+                neonOn();
+                neonOff();
+            }
+        }
+
+        function neonOn (){ // OnMouseEnter
+            if (inputCheckbox.checked) { // Essa condição, apesar de parecer redundante, é necessária
+                parTitle.style.color = '#63CDFF'
+                parTitle.style.border = '.2vw solid #63CDFF'
+                parTitle.style.boxShadow ='0 0 20px #13B3FF, 0 0 60px #13B3FF, inset 0 0 1vw rgba(0,0,0,1), inset 0 0 3vw rgba(0,0,0,.2)'
+                parTitle.style.background ='linear-gradient(0deg, #333, #000)'
+            }
+        }
+
+        function neonOff () { // OnMouseOut
+            if (inputCheckbox.checked) {     // Essa condição, apesar de parecer redundante, é necessária
+                parTitle.style.color = '#FFF'
+                parTitle.style.border = '.2vw solid transparent'
+                parTitle.style.boxShadow ='none'
+                parTitle.style.background ='none'
+            }
+
+        }  
+    </script>
 </body>
 </html>
