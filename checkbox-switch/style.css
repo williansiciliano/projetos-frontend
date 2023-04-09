@@ -50,7 +50,7 @@ input[type="checkbox"]:before{ /* Componente Deslizante */
     cursor: pointer;
 }
 
-input:checked[type="checkbox"]:before{ /* o que Componente Deslizante faz ao ser clicado (desloca 40px para a direita a partir da borda esquerda inicial) */
+input:checked[type="checkbox"]:before{ /* o que o Componente Deslizante faz ao ser clicado (desloca 40px para a direita a partir da borda esquerda inicial) */
     left:40px;
 
 }
