@@ -40,7 +40,7 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 ## 💻 Projeto
 
-Projeto desenvolvido para treinar técnicas como: 'Fire Effects', 'Background Slider', 'Glow Effects' e Animações em geral com CSS.
+Projeto desenvolvido com o objetivo de treinar técnicas como: 'Fire Effects', 'Background Slider', 'Glow Effects' e Animações em geral com CSS.
 
 ## 📝 Licença
 
