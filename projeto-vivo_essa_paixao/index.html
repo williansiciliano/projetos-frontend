@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" media="all">
+    <link rel="stylesheet" href="media-query.css">
+    <link rel="shortcut icon" href="imagens/botafogo.ico" type="image/x-icon">
+    <title>Vivo Essa Paixão</title>
+</head>
+<body>
+    <header>  
+        <h1><i class="fa-sharp fa-solid fa-star fa-beat" id="star1" style="color: #ffffff;"></i><span class="text">Vivo Essa Paixão</span><i class="fa-sharp fa-solid fa-star fa-beat" id="star2" style="color: #ffffff;"></i></h1>
+        <!-- Criando o efeito do fogo para distorcer a fonte com a tag <svg> e <filter> <i class="fa-solid fa-star fa-beat-fade"></i> -->
+        <svg>
+            <filter id="fire">
+                <feTurbulence id="turbulence" baseFrequency="0.1 0.1" numOctaves="2" seed="3">
+                    <animate attributeName="baseFrequency" dur="10s" values="0.1 0.1; 0.12 0.2" repeatCount="indefinite"></animate>
+                </feTurbulence>
+                <feDisplacementMap id="fireDistortion" in="SourceGraphic" scale="10"></feDisplacementMap>
+            </filter>
+        </svg>
+
+        <!-- ................. -->
+        <p>Canto da torcida botafoguense criado por <a href="https://www.linkedin.com/in/willian-siciliano/" rel="external" target="_blank">Willian Siciliano</a></p>
+    </header>
+    <nav class="flexContainer">
+        <a href="index.html" class="flexElement">
+            Letra
+        </a>
+        <a href="versao-original.html" class="flexElement">
+            Versão Original
+        </a>
+        <a href="versao-torcida.html" class="flexElement">
+            Na voz da torcida
+        </a>
+    </nav>
+    <section class="normal">
+        <audio preload="metadata" autoplay loop controls>
+            <source src="audio/vivo_essa_paixao_fadein.mp3" type="audio/mpeg">
+            <source src="audio/vivo_essa_paixao-fadein.ogg" type="audio/ogg">
+            <p id="audio">Infelizmente seu site não consegue reproduzir áudio. <a href="audio/vivo_essa_paixao_fadein.mp3">Clique aqui para baixar o arquivo MP3</a>.</p>
+        </audio>
+
+        <p>
+            Fogo, ôô<br>
+            Fogo, ôôô<br>
+            Fogo, ôô<br>
+            Fogo, ôôô<br>
+        </p>
+    </section>
+
+    <section class="image" id="image1">
+        <p>
+            Botafogo, meu destino<br>
+            Sua estrela e o seu brilho<br>
+            Me chamaram, me atraíram<br>
+            Não escolho, fui escolhido<br>
+        </p>
+    </section>
+
+    <section class="normal">
+        <p>
+            Vivo essa paixão<br>
+            Botafogo no coração<br>
+            No Engenhão eu vou torcer<br>
+            E te ver mais uma vez vencer!<br>
+        </p>
+    </section>
+
+    <section class="image" id="image2">
+        <p>
+            Hoje tem jogo do Botafogo<br>
+            O Glorioso é o meu grande amor!<br>
+        <br>
+            Te amo, Fogo!<br>
+            Te amo, Fogo!<br>
+            Te amo, Fogo!<br>
+        </p>
+    </section>
+    <section class="normal">
+        <p>
+            Fogo, ôô<br>
+            Fogo, ôôô<br>
+            Fogo, ôô<br>
+            Fogo, ôôô<br>
+        </p>
+    </section>
+    <footer>
+        <p>Site desenvolvido por <a href="https://github.com/williansiciliano?tab=repositories" rel="external" target="_blank">Willian Siciliano</a></p>
+    </footer>
+    <script src="https://kit.fontawesome.com/fd23d1dce3.js" crossorigin="anonymous"></script>
+    <script>
+
+/* ------------- SCRIPT MAIS COMPLEXO -----------------
+    // Seleciona o elemento <feDisplacementMap> pelo ID
+    const feDisplacementMap = document.getElementById("fireDistortion");
+
+    // Cria um objeto MediaQueryList que verifica se a largura da janela é menor do que 1000px
+    const mediaQuery = window.matchMedia("(max-width: 1000px)");
+
+    // Define a função callback que será chamada quando a correspondência de mídia mudar
+    const mediaQueryCallback = (e) => {
+    if (e.matches) {
+        // A largura da janela é menor do que 1000px, então define o atributo "scale" como 5
+        feDisplacementMap.setAttribute("scale", "4");
+    } else {
+        // A largura da janela é maior do que 1000px, então define o atributo "scale" como 10
+        feDisplacementMap.setAttribute("scale", "10");
+    }
+    };
+
+    // Registra a função callback como ouvinte da correspondência de mídia
+    mediaQuery.addListener(mediaQueryCallback);
+
+    // Executa a função callback uma vez para garantir que o valor inicial do atributo seja definido corretamente
+    mediaQueryCallback(mediaQuery);
+
+    */
+
+    // ------------- SCRIPT MAIS OBJETIVO --------------------
+    // Seleciona o elemento <feDisplacementMap> pelo ID
+    const feDisplacementMap = document.getElementById("fireDistortion");
+
+    // Define o valor inicial do atributo "scale" como 10
+    feDisplacementMap.setAttribute("scale", "10");
+
+    // Verifica a largura da janela e atualiza o valor do atributo "scale" conforme necessário
+    window.addEventListener("resize", () => {
+    const scale = window.innerWidth <= 1000 ? 4 : 10;
+    feDisplacementMap.setAttribute("scale", scale);
+    });
+    </script>
+</body>
+</html>

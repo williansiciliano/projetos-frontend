@@ -1,0 +1,539 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+:root{
+    --fonte1: Verdana, Geneva, Tahoma, sans-serif;
+    --fonte2: 'Sedgwick Ave Display', cursive;
+    --fonte3: 'Sriracha', cursive;
+
+    --cor01: #F2F2F2; /* background */
+    --cor02: #ffd700;
+    --cor03: #ffeb77;
+    --cor04: #535353; 
+      
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+html, body {
+    font-family: var(--fonte1);
+    min-height: 100vh;
+    background-color: var(--cor01);
+}
+
+header{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+header > h1 {
+    font-family: var(--fonte2);
+    font-size: 7vw;
+    font-weight: 100;
+    padding-top:5vw;
+    /* font-variant: small-caps; */
+    
+}
+
+header > p > a, footer > p > a{
+    font-weight: bold;
+    color: var(--cor02);
+    text-decoration: none;
+}
+
+header > p > a:hover, footer > p > a:hover{
+    text-decoration: underline;
+}
+
+header > p > a:visited{
+    color: var(--cor02)    
+}
+
+svg{
+    height: 0px; /* estava com 300px x 150px e dando um espaçamento vertical grande */
+    width: 0px;
+}
+
+.text{
+    filter: url(#fire);
+    color:#ffeb3b;
+    /* font-weight: 600; */
+    text-shadow: 0 0 10px #ff8c3b,
+                 0 0 40px #ff8c3b,
+                 0 0 80px #ff8c3b,
+                 0 0 160px #ff8c3b,
+                 0 0 240px #ff8c3b; 
+    -webkit-box-reflect: below -100px;
+    transition: 3s ease; 
+
+}
+
+header > p {
+    /* padding-top:2.5vw; */
+    padding-bottom: 2.5vw;
+    font-size: 1.5em;
+    
+}
+
+#star1, #star2{
+    font-size: 4vw;
+    vertical-align: middle;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    padding-bottom: 1vw;
+    text-shadow: 0 0 1vw rgb(182, 182, 182),
+                 0 0 1.5vw rgb(182, 182, 182),
+                 0 0 3.5vw rgb(182, 182, 182),
+                 0 0 5vw rgb(182, 182, 182);
+                 
+}
+
+/*  Caso optar por uma estrela central no topo do site
+    #star3{
+    font-size: 4vw;
+    vertical-align: bottom;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    padding-bottom: 1vw;
+    padding-top:3vw;
+    text-shadow: 0 0 1vw rgb(182, 182, 182),
+                 0 0 1.5vw rgb(182, 182, 182),
+                 0 0 3.5vw rgb(182, 182, 182),
+                 0 0 5vw rgb(182, 182, 182);
+} */
+
+nav {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 10px black;
+    
+}
+
+nav.flexContainer {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    
+}
+
+.flexContainer > a.flexElement{
+    margin-right: 10px;
+    margin-left:10px;
+    margin-bottom:10px;
+    color:white;
+    text-decoration: none;
+    border:none;
+    border-radius: 10px;
+    padding:10px 15px;
+    transition:.5s;
+    font-size: 1em
+    
+}
+
+.flexContainer > a.flexElement:hover{
+    color: var(--cor02);
+    background-color: rgb(68, 68, 68);
+    /* border:1px solid gold; */
+    transform: translateY(-10px);
+    text-decoration: underline;
+}
+
+/* a:hover{
+    text-decoration: underline;
+} */
+
+.flexContainer > a:visited{
+    color:white;
+    
+}
+
+
+/* *************** Parte da página 'VERSÃO ORIGINAL' *************** */
+
+main{
+    max-width: 1200px;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px black;
+    margin-bottom: 30px;
+    border-radius:0 0 20px 20px;
+    
+}
+
+main > h2{
+    background-image: linear-gradient(90deg, rgb(0, 0, 0), rgb(126, 126, 126));
+    color: white;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.8em;
+    font-family: var(--fonte3);
+    text-transform: uppercase;
+}
+
+main > p{
+    text-indent: 40px;
+    margin-bottom: 20px;
+}
+
+main > p.pStrong{
+    font-family: var(--fonte3);
+    font-weight: bold;
+    font-size: 1.2em;
+    color: white;
+    margin-top:20px;
+    margin-bottom:5px;
+    background-image: linear-gradient(90deg, rgb(0, 0, 0), transparent);
+    text-transform: uppercase;
+    border-radius: 10px 10px 0px 0px;
+}
+
+main > p > a#linkAutor{
+    color: var(--cor02);
+    font-weight: bold;
+    text-decoration: none;
+    background-color: rgb(99, 99, 99);
+    border-radius: 4px; 
+    padding: 0 5px;
+}
+
+main > p > a#linkAutor:hover {
+    color: var(--cor03);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* main > p > a#linkAutor:visited{
+    color:var(--cor02);
+    
+} */
+
+main > p > a#linkAutor:active{
+    color: white;
+}
+
+main > p > a#linkAutor::after{
+    content: '\0020\1F517';
+}
+
+div#clipe{
+    display: flex;
+    justify-content: space-around;
+}
+
+div#clipe > span#hand{
+    display: flex;
+    align-items: center;
+    animation: 2s deslizarDir infinite;   
+}
+
+div#clipe > span#hand2{
+    display: flex;
+    align-items: center;
+    animation: 2s deslizarEsq infinite;
+    /* visibility: hidden; */
+}
+
+div#clipe > span#hand > img#handRight, div#clipe > span#hand2 > img#handLeft{
+    width: 80px;
+}
+
+span#clipeOficial { /* usei span para reduzir a box */
+    align-items: center;
+    padding:50px
+}
+
+span#clipeOficial img.yPlayer{ /* tirei o '>' para pegar tanto a img imediatamente dentro da span quanto que está dentro do link */
+    justify-content: center;
+    animation: aparecer 1.5s;
+    display: none;   
+}
+
+span#clipeOficial > img.yPlayer:first-child{
+    display: block;
+}
+
+span#clipeOficial:hover > img.yPlayer:first-child{
+    display:none    
+}
+
+span#clipeOficial:hover > a > img.yPlayer:last-child{
+    display: block;
+    cursor: pointer;               
+}
+
+div.video{
+    background-image: linear-gradient(90deg, rgb(0, 0, 0), rgb(126, 126, 126));
+    position: relative;
+    padding-bottom:50%; 
+    border-radius: 0 0 10px 10px   
+}
+
+div.video > iframe{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    border:5px solid white;
+    border-radius: 5px; 
+} 
+
+
+/* ----------------------------//------------------------------- */
+
+/* *************** Partes da página 'NA VOZ DA TORCIDA' *************** */
+
+div.imagensTorcida{
+    height: 600px;
+    width: 100%;
+    background-image: url(imagens/torcida/gigante.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: 5s;
+    animation: slider;
+    animation-direction: alternate-reverse; /* Define a direção da animação como "alternate-reverse", ou seja, a animação será reproduzida de forma alternada e em ordem reversa após cada iteração. */
+    animation-play-state: running; /* Define o estado de reprodução da animação como "running", o que significa que a animação está em execução. */
+    animation-timing-function: ease-in-out; /* Define a função de tempo da animação como "ease-in-out", que adiciona uma aceleração suave no início e no fim da animação, criando uma transição suave entre os estados inicial e final. */
+    animation-duration: 60s; /* Define a duração da animação */
+    animation-fill-mode: forwards; /* Define o modo de preenchimento da animação como "forwards". Isso faz com que o elemento mantenha o estado final da animação após sua conclusão, ou seja, ele permanecerá no último quadro da animação. */
+    animation-iteration-count: infinite; /* Define o número de iterações da animação como "infinite", o que significa que a animação será repetida infinitamente. */
+
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 10px;
+}
+
+
+div#videoTorcida1{
+    background-image: linear-gradient(90deg, rgb(0, 0, 0), rgb(126, 126, 126));
+    position: relative; 
+    padding-bottom:50%;  
+    border-radius: 10px 10px 0px 0px;  
+}
+
+div#videoTorcida2{
+    background-image: linear-gradient(90deg, rgb(0, 0, 0), rgb(126, 126, 126));
+    position: relative; 
+    padding-bottom:50%;  
+    border-radius: 0px 0px 10px 10px;
+    margin-bottom: 0px;  
+}
+
+div#videoTorcida1 > #iframe1{
+    position: absolute;
+    top: 7%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    border:5px solid white;
+    border-radius: 5px; 
+} 
+
+div#videoTorcida2 > #iframe2{
+    position: absolute;
+    top: 3%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    border:5px solid white;
+    border-radius: 5px; 
+
+}
+
+main > p#fuiEscolhido{
+    color:var(--cor02);
+    border-radius:10px 10px 0px 0px;
+}
+
+/* ----------------------------//------------------------------- */
+
+section{
+    font-size: 3.5vw;
+    margin-bottom:10px;
+    padding-left:50px;
+    font-family: var(--fonte3);
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    line-height: 2em;
+}
+
+audio{
+    
+    padding: 8px 10px;
+    background: gold;
+    border-radius: 10px
+}
+
+section p#audio{
+    font-size: .9em;
+}
+
+section.image {
+    background-color: rgb(51, 51, 51);
+    color: white;
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.473);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section.image > p {
+    background-color: rgba(0, 0, 0, 0.514);
+    border-radius: 10px;
+    display: inline-block;
+    padding: 5px;
+    text-shadow: 1px 1px 0px black;
+}
+
+section#image1{
+    background-image: url(imagens/botafogo-escudos-1900px.jpg);
+    background-size: cover;
+    background-position: center center;
+
+}
+
+section#image2{
+    background-image: url(imagens/botafogo-torcida01-1200pxw.jpg);
+    background-size: cover;
+    background-position: left center;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+strong{
+    color: gold;
+}
+
+@keyframes aparecer{
+    0%{
+        opacity: 0;
+        
+    }
+
+    100%{
+        opacity: 1;
+    }
+
+}
+
+@keyframes deslizarDir{
+    0%{
+        transform: translate(-20%);
+    }
+
+
+    50%{
+        transform: translate(20%);
+    }
+
+    100%{
+        transform: translate(-20%)
+    }
+}
+
+@keyframes deslizarEsq{
+    0%{
+        transform: translate(20%);
+    }
+
+    50%{
+        transform: translate(-20%);
+    }
+
+    100%{
+        transform: translate(20%);
+    }
+}
+
+@keyframes slider{
+    0%{
+        background-image: url(imagens/torcida/torcida_antiga.jpg);
+    }
+
+    10%{
+        background-image: url(imagens/torcida/torcida_fogo_bandeira.jpg);
+    }
+
+    20%{
+        background-image: url(imagens/torcida/mais_tradicional.jpg);
+    }
+
+    30%{
+        background-image: url(imagens/torcida/minha_vida.jpg);
+    }
+
+    40%{
+        background-image: url(imagens/torcida/gigante.jpg);
+    }
+
+    50%{
+        background-image: url(imagens/torcida/glorioso.jpg);
+    }
+
+    60%{
+        background-image: url(imagens/torcida/lutem-por-nos.jpg);
+    }
+
+    70%{
+        background-image: url(imagens/torcida/faixas_camisa_fogo.jpg);
+    }
+
+    80%{
+        background-image: url(imagens/torcida/faixas_fogo.jpg);
+    }
+
+    90%{
+        background-image: url(imagens/torcida/baloes_escudo_fogo.jpg);
+    }
+
+    100%{
+        background-image: url(imagens/torcida/faixas-camisa-fumaca.jpg);
+    }
+}
+
+@media screen and (max-width:990px){
+    header > p {
+        font-size: .9em;
+    }
+
+    .flexContainer > a.flexElement {
+        font-size: .9em;
+        border-radius: 8x;
+        padding:8px 10px;
+    }
+
+    .flexContainer > a.flexElement:hover{
+        transform: translateY(-5px);
+        
+    }
+
+    feDisplacementMap{
+        scale: 1;
+    }
+
+    #fireDistortion{
+        scale:5;
+    }
+
+    
+}
