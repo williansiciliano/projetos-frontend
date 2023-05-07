@@ -13,6 +13,7 @@
     --cor02: #ffd700;
     --cor03: #ffeb77;
     --cor04: #535353; 
+    --cor05: #ff8c3b;
       
 }
 
@@ -25,8 +26,9 @@
 
 html, body {
     font-family: var(--fonte1);
-    min-height: 100vh;
+    height: 100vh;
     background-color: var(--cor01);
+    font-size: 1em;
 }
 
 header{
@@ -97,20 +99,6 @@ header > p {
                  
 }
 
-/*  Caso optar por uma estrela central no topo do site
-    #star3{
-    font-size: 4vw;
-    vertical-align: bottom;
-    padding-left: 4vw;
-    padding-right: 4vw;
-    padding-bottom: 1vw;
-    padding-top:3vw;
-    text-shadow: 0 0 1vw rgb(182, 182, 182),
-                 0 0 1.5vw rgb(182, 182, 182),
-                 0 0 3.5vw rgb(182, 182, 182),
-                 0 0 5vw rgb(182, 182, 182);
-} */
-
 nav {
     background-color: black;
     color: white;
@@ -125,8 +113,7 @@ nav.flexContainer {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 40px;
-    
+    height: 40px;   
 }
 
 .flexContainer > a.flexElement{
@@ -139,8 +126,7 @@ nav.flexContainer {
     border-radius: 10px;
     padding:10px 15px;
     transition:.5s;
-    font-size: 1em
-    
+    font-size: 1em  
 }
 
 .flexContainer > a.flexElement:hover{
@@ -151,15 +137,10 @@ nav.flexContainer {
     text-decoration: underline;
 }
 
-/* a:hover{
-    text-decoration: underline;
-} */
-
 .flexContainer > a:visited{
     color:white;
     
 }
-
 
 /* *************** Parte da página 'VERSÃO ORIGINAL' *************** */
 
@@ -210,6 +191,7 @@ main > p > a#linkAutor{
     background-color: rgb(99, 99, 99);
     border-radius: 4px; 
     padding: 0 5px;
+    white-space: nowrap;
 }
 
 main > p > a#linkAutor:hover {
@@ -217,11 +199,6 @@ main > p > a#linkAutor:hover {
     font-weight: bold;
     text-decoration: underline;
 }
-
-/* main > p > a#linkAutor:visited{
-    color:var(--cor02);
-    
-} */
 
 main > p > a#linkAutor:active{
     color: white;
@@ -233,7 +210,7 @@ main > p > a#linkAutor::after{
 
 div#clipe{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 div#clipe > span#hand{
@@ -299,27 +276,157 @@ div.video > iframe{
 
 /* *************** Partes da página 'NA VOZ DA TORCIDA' *************** */
 
-div.imagensTorcida{
-    height: 600px;
-    width: 100%;
-    background-image: url(imagens/torcida/gigante.jpg);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    transition: 5s;
-    animation: slider;
-    animation-direction: alternate-reverse; /* Define a direção da animação como "alternate-reverse", ou seja, a animação será reproduzida de forma alternada e em ordem reversa após cada iteração. */
-    animation-play-state: running; /* Define o estado de reprodução da animação como "running", o que significa que a animação está em execução. */
-    animation-timing-function: ease-in-out; /* Define a função de tempo da animação como "ease-in-out", que adiciona uma aceleração suave no início e no fim da animação, criando uma transição suave entre os estados inicial e final. */
-    animation-duration: 60s; /* Define a duração da animação */
-    animation-fill-mode: forwards; /* Define o modo de preenchimento da animação como "forwards". Isso faz com que o elemento mantenha o estado final da animação após sua conclusão, ou seja, ele permanecerá no último quadro da animação. */
-    animation-iteration-count: infinite; /* Define o número de iterações da animação como "infinite", o que significa que a animação será repetida infinitamente. */
-
-    border-radius: 0 0 10px 10px;
+/* ---- SLIDER ---- */
+div#container{
+    background-image: linear-gradient(90deg, rgb(0, 0, 0), rgb(126, 126, 126));
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 10px;
+    border-radius: 0px 0px 10px 10px;
+    
+}
+div#container div.slider{
+    width: 100%;
+    max-width: 1160px;
+    height: auto;
+    overflow: hidden;
+    
 }
 
+div.slides{
+    width: 500%; 
+    height: auto;
+    display: flex;
+    position: relative; /* ????? */
+    
+}
 
+div.slides input{
+    display: none;
+}
+
+div.slides div.slide{
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    width: 20%;
+    max-height: 600px;
+    transition: 2s;
+    overflow: hidden;
+}
+
+div.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* adicionado para manter a proporção da imagem e preencher todo o espaço disponível */
+    border-radius: 0px 0px 10px 10px;
+  }
+
+/* CSS para o Manual Slide Navigation */
+
+div.containerNavigation{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    
+}
+
+div.navigation-manual{
+    position: absolute;
+    width: 1100px;
+    margin-top: -50px;
+    display: flex;
+    justify-content: center;
+
+}
+
+div.navigation-manual label.manual-btn{
+    border: 3px solid var(--cor05);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 1s;
+}
+
+label.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+.manual-btn:hover{
+    background:var(--cor05);
+}
+
+.manual-btn:active{
+    background:var(--cor05);
+}
+
+div.slides input#radio1:checked ~ .first{
+    margin-left: 0;
+}
+
+div.slides input#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+
+div.slides input#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+
+div.slides input#radio4:checked ~ .first{
+    margin-left: -60%;
+}
+
+div.slides input#radio5:checked ~ .first{
+    margin-left: -80%;
+}
+
+/* CSS para o Automatic Navigation */
+
+.containerNavigationAuto{
+    /* display: flex;
+    justify-content: center; */
+    position: absolute;
+    top:5px;
+    left:5px;
+}
+.navigation-auto{
+    display: flex;
+    width: 1100px; 
+}
+
+.navigation-auto div{
+    border: 3px solid var(--cor05);
+    padding: 10px;
+    border-radius: 50%;
+    transition: 1s
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 10px;
+}
+
+#radio1:checked ~ .containerNavigationAuto .navigation-auto .auto-btn1{
+    background: var(--cor02)
+}
+
+#radio2:checked ~ .containerNavigationAuto .navigation-auto .auto-btn2{
+    background: var(--cor02)
+}
+
+#radio3:checked ~ .containerNavigationAuto .navigation-auto .auto-btn3{
+    background: var(--cor02)
+}
+
+#radio4:checked ~ .containerNavigationAuto .navigation-auto .auto-btn4{
+    background: var(--cor02)
+}
+
+#radio5:checked ~ .containerNavigationAuto .navigation-auto .auto-btn5{
+    background: var(--cor02)
+}
+
+/* ------------------------------ */
 div#videoTorcida1{
     background-image: linear-gradient(90deg, rgb(0, 0, 0), rgb(126, 126, 126));
     position: relative; 
@@ -465,52 +572,6 @@ strong{
     }
 }
 
-@keyframes slider{
-    0%{
-        background-image: url(imagens/torcida/torcida_antiga.jpg);
-    }
-
-    10%{
-        background-image: url(imagens/torcida/torcida_fogo_bandeira.jpg);
-    }
-
-    20%{
-        background-image: url(imagens/torcida/mais_tradicional.jpg);
-    }
-
-    30%{
-        background-image: url(imagens/torcida/minha_vida.jpg);
-    }
-
-    40%{
-        background-image: url(imagens/torcida/gigante.jpg);
-    }
-
-    50%{
-        background-image: url(imagens/torcida/glorioso.jpg);
-    }
-
-    60%{
-        background-image: url(imagens/torcida/lutem-por-nos.jpg);
-    }
-
-    70%{
-        background-image: url(imagens/torcida/faixas_camisa_fogo.jpg);
-    }
-
-    80%{
-        background-image: url(imagens/torcida/faixas_fogo.jpg);
-    }
-
-    90%{
-        background-image: url(imagens/torcida/baloes_escudo_fogo.jpg);
-    }
-
-    100%{
-        background-image: url(imagens/torcida/faixas-camisa-fumaca.jpg);
-    }
-}
-
 @media screen and (max-width:990px){
     header > p {
         font-size: .9em;
@@ -518,7 +579,7 @@ strong{
 
     .flexContainer > a.flexElement {
         font-size: .9em;
-        border-radius: 8x;
+        border-radius: 8px;
         padding:8px 10px;
     }
 

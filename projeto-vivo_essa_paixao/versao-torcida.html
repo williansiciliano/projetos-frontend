@@ -39,9 +39,63 @@
     <main>
         <h2>Na Voz da Torcida</h2>
         <p class="pStrong" id="fuiEscolhido">Não Escolho, Fui Escolhido</p>
-        <div class="imagensTorcida">
-            
+        
+        <!-- image slider start -->        
+        <div id="container">
+            <div class="slider">
+                <div class="slides">
+                    <!-- radio buttons start -->
+                    <input type="radio" name="radio-btn" id="radio1">
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <input type="radio" name="radio-btn" id="radio4">
+                    <input type="radio" name="radio-btn" id="radio5">
+                    <!-- radio buttons end -->
+                    <!-- slide images start -->
+                    <div class="slide first">
+                        <img src="imagens/torcida/edited/img1.jpg" alt="bfr1">
+                    </div>
+                    <div class="slide">
+                        <img src="imagens/torcida/edited/img2.jpg" alt="bfr2">
+                    </div>
+                    <div class="slide">
+                        <img src="imagens/torcida/mais_tradicional.jpg" alt="bfr3">
+                    </div>
+                    <div class="slide">
+                        <img src="imagens/torcida/edited/img5.jpg" alt="bfr4">
+                    </div>
+                    <div class="slide">
+                        <img src="imagens/torcida/minha_vida.jpg" alt="bfr4">
+                    </div>
+                    
+                    <!-- slide images end -->
+                    <!-- automatic navigation start -->
+                    <div class="containerNavigationAuto">
+                        <div class="navigation-auto">
+                            <div class="auto-btn1"></div>
+                            <div class="auto-btn2"></div>
+                            <div class="auto-btn3"></div>
+                            <div class="auto-btn4"></div>
+                            <div class="auto-btn5"></div>
+                        </div>
+                    </div>
+                    <!-- automatic navigation end -->
+                </div>
+                <!-- manual navigation start -->
+                <div class="containerNavigation">
+                    <div class="navigation-manual">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn"></label>
+                        <label for="radio5" class="manual-btn"></label>
+                    </div>
+                </div>
+                <!-- manual navigation end -->
+            </div>
         </div>
+        <!-- image slider end -->
+
         <div id="videoTorcida1">
             <iframe id="iframe1" width="1100" height="619" src="https://www.youtube.com/embed/O7K_j-AERAo" title="YouTube video player1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
@@ -54,34 +108,8 @@
     </footer>
     <script src="https://kit.fontawesome.com/fd23d1dce3.js" crossorigin="anonymous"></script>
     <script>
-
-        /* ------------- SCRIPT MAIS COMPLEXO -----------------
-            // Seleciona o elemento <feDisplacementMap> pelo ID
-            const feDisplacementMap = document.getElementById("fireDistortion");
         
-            // Cria um objeto MediaQueryList que verifica se a largura da janela é menor do que 1000px
-            const mediaQuery = window.matchMedia("(max-width: 1000px)");
-        
-            // Define a função callback que será chamada quando a correspondência de mídia mudar
-            const mediaQueryCallback = (e) => {
-            if (e.matches) {
-                // A largura da janela é menor do que 1000px, então define o atributo "scale" como 5
-                feDisplacementMap.setAttribute("scale", "4");
-            } else {
-                // A largura da janela é maior do que 1000px, então define o atributo "scale" como 10
-                feDisplacementMap.setAttribute("scale", "10");
-            }
-            };
-        
-            // Registra a função callback como ouvinte da correspondência de mídia
-            mediaQuery.addListener(mediaQueryCallback);
-        
-            // Executa a função callback uma vez para garantir que o valor inicial do atributo seja definido corretamente
-            mediaQueryCallback(mediaQuery);
-        
-            */
-        
-            // ------------- SCRIPT MAIS OBJETIVO --------------------
+            // --------- SCRIPT MAIS OBJETIVO para o FILTER de FOGO ---------
             // Seleciona o elemento <feDisplacementMap> pelo ID
             const feDisplacementMap = document.getElementById("fireDistortion");
         
@@ -93,6 +121,17 @@
             const scale = window.innerWidth <= 1000 ? 4 : 10;
             feDisplacementMap.setAttribute("scale", scale);
             });
-            </script>
+    </script>
+            
+    <script type="text/javascript"> // script para o SLIDER
+        var counter = 1;
+        setInterval(function(){
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if(counter > 5){
+                counter = 1;
+            }
+        }, 5000);
+    </script>
 </body>
 </html>

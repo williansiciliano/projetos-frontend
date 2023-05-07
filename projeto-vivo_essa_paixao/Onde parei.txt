@@ -1,0 +1,5 @@
+video 11:13
+
+Por que a primeira transição é diferente?
+
+Redimensionando(diminuindo), as imagens não ficam responsivas!!!

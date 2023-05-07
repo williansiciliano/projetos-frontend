@@ -1,0 +1,68 @@
+Slider cancelado (por animação) - piscando entre uma imagem e outra
+video base:https://www.youtube.com/watch?v=k9pOWBPZ3aQ&t=66s&ab_channel=TahmidAhmed
+
+div.imagensTorcida{
+    height: 600px;
+    width: 100%;
+    background-image: url(imagens/torcida/torcida_antiga.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 5s;
+    animation: slider;
+    animation-direction: normal; /* Define a direção da animação como "alternate-reverse", ou seja, a animação será reproduzida de forma alternada e em ordem reversa após cada iteração. */
+    animation-play-state: running; /* Define o estado de reprodução da animação como "running", o que significa que a animação está em execução. */
+    animation-timing-function: linear; /* Define a função de tempo da animação como "ease-in-out", que adiciona uma aceleração suave no início e no fim da animação, criando uma transição suave entre os estados inicial e final. */
+    animation-duration: 65s; /* Define a duração da animação */
+    animation-fill-mode: both; /* Define o modo de preenchimento da animação como "forwards". Isso faz com que o elemento mantenha o estado final da animação após sua conclusão, ou seja, ele permanecerá no último quadro da animação. */
+    animation-iteration-count: infinite; /* Define o número de iterações da animação como "infinite", o que significa que a animação será repetida infinitamente. */
+
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 10px;
+}
+
+@keyframes slider{
+    0%{
+        background-image: url(imagens/torcida/torcida_antiga.jpg);
+    }
+
+    10%{
+        background-image: url(imagens/torcida/torcida_fogo_bandeira.jpg);
+    }
+
+    20%{
+        background-image: url(imagens/torcida/mais_tradicional.jpg);
+    }
+
+    30%{
+        background-image: url(imagens/torcida/minha_vida.jpg);
+    }
+
+    40%{
+        background-image: url(imagens/torcida/gigante.jpg);
+    }
+
+    50%{
+        background-image: url(imagens/torcida/glorioso.jpg);
+    }
+
+    60%{
+        background-image: url(imagens/torcida/lutem-por-nos.jpg);
+    }
+
+    70%{
+        background-image: url(imagens/torcida/faixas_camisa_fogo.jpg);
+    }
+
+    80%{
+        background-image: url(imagens/torcida/faixas_fogo.jpg);
+    }
+
+    90%{
+        background-image: url(imagens/torcida/baloes_escudo_fogo.jpg);
+    }
+
+    100%{
+        background-image: url(imagens/torcida/faixas-camisa-fumaca.jpg);
+    }
+}
