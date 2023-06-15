@@ -9,7 +9,7 @@
     --fonte2: 'Sedgwick Ave Display', cursive;
     --fonte3: 'Sriracha', cursive;
 
-    --cor01: #F2F2F2; /* background */
+    --cor01: #7a7a7a; /* background */
     --cor02: #ffd700;
     --cor03: #ffeb77;
     --cor04: #535353; 
@@ -42,6 +42,7 @@ header > h1 {
     font-size: 7vw;
     font-weight: 100;
     padding-top:5vw;
+    white-space: nowrap;
     /* font-variant: small-caps; */
     
 }
@@ -165,6 +166,7 @@ main > h2{
     font-size: 1.8em;
     font-family: var(--fonte3);
     text-transform: uppercase;
+    text-shadow: 1px 1px 1px black;
 }
 
 main > p{
@@ -277,6 +279,7 @@ div.video > iframe{
 /* *************** Partes da página 'NA VOZ DA TORCIDA' *************** */
 
 /* ---- SLIDER ---- */
+
 div#container{
     background-image: linear-gradient(90deg, rgb(0, 0, 0), rgb(126, 126, 126));
     display: flex;
@@ -338,7 +341,6 @@ div.navigation-manual{
     margin-top: -50px;
     display: flex;
     justify-content: center;
-
 }
 
 div.navigation-manual label.manual-btn{
@@ -392,7 +394,8 @@ div.slides input#radio5:checked ~ .first{
 }
 .navigation-auto{
     display: flex;
-    width: 1100px; 
+    width: 1100px;
+    visibility: hidden; 
 }
 
 .navigation-auto div{
@@ -427,11 +430,18 @@ div.slides input#radio5:checked ~ .first{
 }
 
 /* ------------------------------ */
+div#videoTorcida0{
+    background-image: linear-gradient(90deg, rgb(0, 0, 0), rgb(126, 126, 126));
+    position: relative; 
+    padding-bottom:50%;  
+    border-radius: 10px 10px 0px 0px; 
+}
+
 div#videoTorcida1{
     background-image: linear-gradient(90deg, rgb(0, 0, 0), rgb(126, 126, 126));
     position: relative; 
     padding-bottom:50%;  
-    border-radius: 10px 10px 0px 0px;  
+    border-radius: 0px 0px 0px 0px;  
 }
 
 div#videoTorcida2{
@@ -442,9 +452,19 @@ div#videoTorcida2{
     margin-bottom: 0px;  
 }
 
+div#videoTorcida0 > #iframe0{
+    position: absolute;
+    top: 9%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    border:5px solid white;
+    border-radius: 5px; 
+}
+
 div#videoTorcida1 > #iframe1{
     position: absolute;
-    top: 7%;
+    top: 5%;
     left: 5%;
     width: 90%;
     height: 90%;
@@ -454,7 +474,7 @@ div#videoTorcida1 > #iframe1{
 
 div#videoTorcida2 > #iframe2{
     position: absolute;
-    top: 3%;
+    top: 1%;
     left: 5%;
     width: 90%;
     height: 90%;
@@ -480,6 +500,12 @@ section{
     line-height: 2em;
 }
 
+section p{
+    padding: 30px 30px;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
 audio{
     
     padding: 8px 10px;
@@ -503,7 +529,7 @@ section.image > p {
     background-color: rgba(0, 0, 0, 0.514);
     border-radius: 10px;
     display: inline-block;
-    padding: 5px;
+    /* padding: 5px; */
     text-shadow: 1px 1px 0px black;
 }
 
