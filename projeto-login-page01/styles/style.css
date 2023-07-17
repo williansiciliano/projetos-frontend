@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container */
+body{
+    height: 100vh;
+    background-color: #72b7e6;
+    background-image: url(/images/background/bg3.png);
+    background-position: left center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.container{
+    display: flex;
+    height: 600px;
+    width: 1000px;
+    border: 1px solid black;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.623);
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 40%;
+}
+
+.form div#logo{
+    width: 100%;
+    height: 200px;
+    background-image: url(/images/logo/klinikosLogo13A.png);
+    background-position: center center;
+    background-size: contain;
+    /* background-attachment: fixed; */
+    background-repeat: no-repeat;
+    margin-top:-65px;
+    margin-left: 0px;
+    margin-right:0px;
+    margin-bottom: 20px
+}
+
+.form h1{
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.form .box{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 300px;
+    border-radius: 20px;
+    padding-left: 10px;
+    border:1px solid black.
+}
+
+.form .box:focus{
+    box-shadow: 0px 0px 10px green;
+}
+
+.form #submit{
+    margin-top:20px;
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(0, 0, 255);
+    color: white;
+    font-weight: bold;
+    border:none;
+}
+
+.form #submit:hover{
+    background-color: rgb(0, 110, 255);
+    color: white;
+    cursor: pointer
+}
+
+#logoEco {
+    display: flex;
+    justify-content: end;
+    margin-bottom: -100px;
+    
+}
+
+#logoEco img{
+    width: 50%;
+    
+}
+
+.side{
+    display: flex;
+    width: 60%;
+    background-color: blue;
+    background-image: url(/images/sideImage/img1a.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: local;
+}
