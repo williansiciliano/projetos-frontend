@@ -47,7 +47,7 @@ body{
     background-size: contain;
     /* background-attachment: fixed; */
     background-repeat: no-repeat;
-    margin-top:-65px;
+    /* margin-top:-65px; */
     margin-left: 0px;
     margin-right:0px;
     margin-bottom: 20px
@@ -93,12 +93,13 @@ body{
 #logoEco {
     display: flex;
     justify-content: end;
-    margin-bottom: -100px;
+    margin-top: 20px;
+    margin-right: 20px;
     
 }
 
 #logoEco img{
-    width: 50%;
+    width: 30%;
     
 }
 
@@ -106,7 +107,7 @@ body{
     display: flex;
     width: 60%;
     background-color: blue;
-    background-image: url(/images/sideImage/img1a.jpg);
+    background-image: url(/images/sideImage/bfr.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
